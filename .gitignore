@@ -1,0 +1,15 @@
+fairseq/fairseq/*
+fairseq/manifest_path/
+fairseq/fairseq_cli/__pycache__/
+fairseq/build/
+fairseq/alignment_train_cpu_binding.cpython-38-x86_64-linux-gnu.so
+data/
+fairseq/.gitignore
+fairseq/fairseq.egg-info/
+fairseq/output_path/
+fairseq/pre-trained-models/
+fairseq/waves_path/
+fairseq/testing_script.py
+fairseq/outputs/
+*.pt
+*.tar.gz
