@@ -4,7 +4,7 @@
 from clearml import Task, Dataset
 
 task = Task.init(project_name='LibrispeechTest', task_name='finetuning', output_uri='s3://experiment-logging/storage', task_type='training')
-task.set_base_docker('thatnicneo/fairseq_test:v0.1.0')
+task.set_base_docker('thatnicneo/fairseq_test:v0.1.1')
 task.execute_remotely(queue_name='compute2', exit_process=True)
 
 # Copyright (c) Facebook, Inc. and its affiliates.
@@ -27,17 +27,17 @@ from fairseq.dataclass.utils import omegaconf_no_object_check
 from fairseq.utils import reset_logging
 from fairseq_cli.train import main as pre_main
 
-# wget the pre-trained model using subprocess
-import subprocess
+# # wget the pre-trained model using subprocess
+# import subprocess
 
-PRE_TRAINED_MODEL_FILENAME = './wav2vec_small.pt'
-PRE_TRAINED_MODEL_DIR = './fairseq/'
-PRE_TRAINED_MODEL_LINK = 'https://dl.fbaipublicfiles.com/fairseq/wav2vec/wav2vec_small.pt'
+# PRE_TRAINED_MODEL_FILENAME = './wav2vec_small.pt'
+# PRE_TRAINED_MODEL_DIR = './fairseq/'
+# PRE_TRAINED_MODEL_LINK = 'https://dl.fbaipublicfiles.com/fairseq/wav2vec/wav2vec_small.pt'
 
-if os.path.isfile(PRE_TRAINED_MODEL_FILENAME):
-    print('file already exist!')
-else:
-    subprocess.run(['wget', PRE_TRAINED_MODEL_LINK, PRE_TRAINED_MODEL_DIR])
+# if os.path.isfile(PRE_TRAINED_MODEL_FILENAME):
+#     print('file already exist!')
+# else:
+#     subprocess.run(['wget', PRE_TRAINED_MODEL_LINK, PRE_TRAINED_MODEL_DIR])
 
 # use if-else statement to check if the file exists already after wget
 # subprocess.run(['wget', OUTPUT PATH to download the pre-trained model(i think is second param),'wskldadajh'])
